@@ -9,10 +9,9 @@ def findTheDifference(s,t):
         if(s1[i]!=t1[i]):
             return t1[i]
     return t1[len(t1)-1]
-           
-    
+
 s1 = "abcd"
-t1 = "abcde"
+t1 = "abecd"
 s2 = ""
 t2 = "y"
 
