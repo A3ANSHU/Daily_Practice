@@ -1,13 +1,13 @@
 import java.util.Arrays;
 class Anshu{
-    static int position(int test_case[], int target){
+    static int position(int nums[], int target){
         int start = 0;
-        int end = test_case.length-1;
+        int end = nums.length-1;
         while(start<end){
             int mid = start + (end-start)/2;
-            if (test_case[mid] == target){
+            if (nums[mid] == target){
                 return mid;
-            }if(test_case[mid]>target){
+            }if(nums[mid]>target){
                 end = mid-1;
             }else{
                 start = mid+1;
