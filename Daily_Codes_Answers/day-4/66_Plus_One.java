@@ -1,17 +1,17 @@
 import java.util.Arrays;
 class Anshu{
-    static int[] plus_one(int test_case[]){
-        for(int i=test_case.length-1 ; i>=0 ;i-- ){
-            if(test_case[i]!=9){
-                test_case[i]+=1;
-                return test_case;
+    static int[] plus_one(int digits[]){
+        for(int i=digits.length-1 ; i>=0 ;i-- ){
+            if(digits[i]!=9){
+                digits[i]+=1;
+                return digits;
             }else{
-                test_case[i]=0;
+                digits[i]=0;
             }
         }
-        test_case = new int[test_case.length+1];
-        test_case[0]=1;
-        return test_case;
+        digits = new int[digits.length+1];
+        digits[0]=1;
+        return digits;
     }
     public static void main(String[] args) {
         int test_case_1[] = new int[]{1,2,3};
