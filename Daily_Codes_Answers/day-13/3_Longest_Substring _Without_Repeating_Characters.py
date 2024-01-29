@@ -6,7 +6,7 @@ def lengthOfLongestSubstring(s):
             if len(ls)>max:
                 max=len(ls)
             ls.clear()
-        ls.append(i)444
+        ls.append(i)
     return max
 
 s1 = "abcabcbb"
