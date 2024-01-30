@@ -1,3 +1,4 @@
+// TLE
 const countPrimes = (n)=>{
     if(n<2){
         return 0;
