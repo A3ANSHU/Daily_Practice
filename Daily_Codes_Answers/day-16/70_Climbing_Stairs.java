@@ -4,7 +4,7 @@ class Anshu{
         for(int i=s ; i>=1 ;i--){
             num*=i;
         }
-    return num;
+        return num;
     }
     static int climbStairs(int n) {
         int step =1;
