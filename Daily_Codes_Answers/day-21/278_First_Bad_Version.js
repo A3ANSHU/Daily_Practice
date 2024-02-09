@@ -25,4 +25,4 @@ console.log("Input : "+n1+"\nOutput : "+solution((n)=>{return n===4})(n1));
 
 let n2=1;
 console.log("-- test case 2 --");
-console.log("Input : "+n2+"\nOutput : "+solution((n)=>{return n===4})(n2));
+console.log("Input : "+n2+"\nOutput : "+solution((n)=>{return n===1})(n2));
