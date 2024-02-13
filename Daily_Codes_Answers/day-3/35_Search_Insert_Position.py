@@ -1,16 +1,16 @@
-def position(test_case,target):
+def position(nums,target):
     
     start = 0
-    end = len(test_case)-1
-    while(start<end):
+    end = len(nums)-1
+    while(start<=end):
         mid = int(start + (end-start)/2)
-        if (test_case[mid] == target):
+        if (nums[mid] == target):
             return mid
-        if(test_case[mid] > target):
+        if(nums[mid] > target):
             end = mid-1
         else:
             start = mid+1
-    return start+1
+    return start
 
 
 test_case_1 = [1,3,5,6]

@@ -1,7 +1,7 @@
 var position = function(nums, target) {
     let start = 0;
     let end = nums.length-1;
-    while(start<end){
+    while(start<=end){
         let mid = parseInt(start + (end-start)/2);
         if (nums[mid] == target){
             return mid;
@@ -11,7 +11,7 @@ var position = function(nums, target) {
             start = mid+1;
         }
     }
-    return start+1;
+    return start;
 };
 
 let test_case_1 = [1,3,5,6]
