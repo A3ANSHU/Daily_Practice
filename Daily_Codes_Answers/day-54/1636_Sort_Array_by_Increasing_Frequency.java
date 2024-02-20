@@ -9,27 +9,37 @@ class Solution {
             else m.put(i, 1);
         }
 
-        Map <Integer,ArrayList> mr = new HashMap<>();
+        Map <Integer,ArrayList<Integer>> mr = new TreeMap<>();
 
-        List<Integer> l = new ArrayList<>();
-        for(int i : m.keySet()){
-            
+        for(int i : m.keySet()){   
+            ArrayList<Integer> l = new ArrayList<>();
 
-            mr.put(m.get(i), i);
-        }   
+            if(mr.containsKey(m.get(i))){
+                mr.get(m.get(i)).add(i);
+            }
+            else{l.add(i);
+            mr.put(m.get(i), l);}
+        }
+
+System.out.println(mr);
 
         int index=0;
         for(int i : mr.keySet()){
-            int num =i;
+            int num=i*mr.get(i).size(); 
+            int j=mr.get(i).size()-1;
+            Collections.sort(mr.get(i));
             while(num>0){
-                nums[index]= mr.get(i);
+                nums[index]= mr.get(i).get(j);
                 num--;
                 index++;
+                if(num%i==0){j--;}
             }
         }   
         return nums;
     }
     public static void main(String[] args) {
         System.out.println(Arrays.toString(frequencySort(new int []{2,3,1,3,2})));
+        System.out.println(Arrays.toString(frequencySort(new int []{-1,1,-6,4,5,-6,1,4,1})));
+        System.out.println(Arrays.toString(frequencySort(new int []{-53,-53,52,52,52,52,-53,-53,52,-53,52,52,52,-53,52,52,-53,52,-53,52,-53,52,52,52,52,52,52,52,52,52,-53,52,-53,52,-53,52,52,52,-53,-53,52,-53,52,52,52,52,-53,-53,-53,-53,-53,52,52,-53,52,-53,52,52,52})));
     }
 }
