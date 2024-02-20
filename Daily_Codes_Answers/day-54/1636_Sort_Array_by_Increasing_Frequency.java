@@ -21,8 +21,6 @@ class Solution {
             mr.put(m.get(i), l);}
         }
 
-System.out.println(mr);
-
         int index=0;
         for(int i : mr.keySet()){
             int num=i*mr.get(i).size(); 
