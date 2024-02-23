@@ -8,6 +8,11 @@ var two_sum = function(nums, target) {
     }
     return [-1]
 };
+var twoSum = function(nums, target) {
+    for(let i=0 ; i<nums.length ; i++){
+        if(nums.indexOf(target-nums[i])!==-1 && i!=nums.indexOf(target-nums[i]))return [i,nums.indexOf(target-nums[i])]
+    }
+};
 
 let test_case_1 = [2,7,11,15]
 let target_1 = 9
