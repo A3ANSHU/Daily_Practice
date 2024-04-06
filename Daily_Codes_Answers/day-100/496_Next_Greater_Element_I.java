@@ -3,16 +3,17 @@ import java.util.Arrays;
 class Solution {
     static int[] nextGreaterElement(int[] nums1, int[] nums2) {
         for(int i=0 ; i<nums1.length ; i++){
+            boolean find = false;
+            int max=nums1[i];
             for(int j=0 ; j<nums2.length ; j++){
-                System.out.print((nums1[i]==nums2[j])+" ");
-                System.out.println((j>nums2.length-1)+" ");
-                // System.out.println(nums2[j+1]>nums1[i]);
-                // if(nums1[i]==nums2[j] && j!=nums2.length-1 && nums2[j+1]>nums1[i]){
-                //     nums1[i]=nums2[j+1];
-                // }else{
-                //     nums1[i]=-1;
-                // }
+                if(nums1[i]==nums2[j])find=true;
+                if(find && nums2[j]>max){
+                    max=nums2[j];
+                    break;
+                }
             }
+            if(max==nums1[i])nums1[i]=-1;
+            else nums1[i]=max;
         }
         return nums1;
     }
