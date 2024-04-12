@@ -1,25 +1,31 @@
-import java.util.ArrayList;
+import java.util.*;
 
 class Anshu{
     static int lengthOfLongestSubstring(String s) {
-       
-        ArrayList <Character> al = new ArrayList<>();
-        int max = 0;
-        for(int i=0 ; i<s.length() ; i++){
-            if(al.contains(s.charAt(i))){
-                if(al.size()>max){
-                    max = al.size();
+        int n = s.length();
+        int maxLength = 0;
+        Set<Character> charSet = new HashSet<>();
+        int left = 0;
+        
+        for (int right = 0; right < n; right++) {
+            if (!charSet.contains(s.charAt(right))) {
+                charSet.add(s.charAt(right));
+                maxLength = Math.max(maxLength, right - left + 1);
+            } else {
+                while (charSet.contains(s.charAt(right))) {
+                    charSet.remove(s.charAt(left));
+                    left++;
                 }
-                al.clear();
+                charSet.add(s.charAt(right));
             }
-            al.add(s.charAt(i));
         }
-        return max;
+        
+        return maxLength;
     }
     public static void main(String[] args) {
         
         String s1 = "abcabcbb";
-        String s2 = "bbbbb";
+        String s2 = "dvdf";
         String s3 = "pwwkew";
 
         System.out.println("-- test case 1 --");
